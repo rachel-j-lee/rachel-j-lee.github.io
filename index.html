@@ -726,6 +726,567 @@ footer {
   }
 }
   
+/* REFINED PORTRAIT STYLING */
+
+.hero-image-wrap {
+  width: 100%;
+  max-width: 390px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 190px 190px 12px 12px;
+  background: #EDE3D9;
+}
+
+.about-photo {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 180px 180px 12px 12px;
+  background: #EDE3D9;
+  display: block;
+}
+
+@media(max-width:750px) {
+  .hero-image {
+    height: 380px;
+  }
+
+  .about-photo {
+    height: 380px;
+  }
+}
+
+/* =================================
+   RL. EDITORIAL PORTFOLIO REDESIGN
+================================= */
+
+:root {
+  --cream: #F6F1EA;
+  --beige: #EAE1D7;
+  --light: #F0E9E1;
+  --taupe: #B9A596;
+  --brown: #79695D;
+  --dark: #463D37;
+  --muted: #887D74;
+  --white: #FCFAF7;
+  --line: #DDD2C8;
+
+  --rose: #B88F91;
+  --rose-light: #E7D6D4;
+}
+
+/* GLOBAL */
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--rose-light);
+  color: var(--dark);
+}
+
+.section {
+  padding: 125px 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+
+.eyebrow {
+  color: var(--rose);
+  letter-spacing: 4px;
+}
+
+/* NAVIGATION */
+
+header {
+  background: rgba(246,241,234,.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--dark);
+  font-size: 32px;
+}
+
+.nav-links a {
+  color: var(--brown);
+  transition: color .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--rose);
+}
+
+/* HOME / HERO */
+
+.hero {
+  min-height: 730px;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 75px;
+  padding-top: 100px;
+  padding-bottom: 110px;
+}
+
+.hero h1 {
+  font-size: clamp(65px, 8vw, 112px);
+  letter-spacing: -4px;
+  line-height: 1.02;
+  color: var(--dark);
+}
+
+.hero h1 span {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.hero-description {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--muted);
+  max-width: 470px;
+}
+
+.hero-tag {
+  letter-spacing: 2px;
+  font-size: 10px;
+  color: var(--brown);
+}
+
+.hero-image-wrap {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  position: relative;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 220px 220px 8px 8px;
+  background: var(--beige);
+}
+
+.image-caption {
+  background: var(--white);
+  color: var(--brown);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 35px rgba(70,61,55,.07);
+  left: -35px;
+  bottom: 25px;
+  padding: 15px 24px;
+  border-radius: 40px;
+}
+
+.button {
+  background: var(--dark);
+  border-radius: 3px;
+  padding: 15px 29px;
+  letter-spacing: .3px;
+}
+
+.button:hover {
+  background: var(--rose);
+}
+
+.text-link {
+  color: var(--brown);
+  border-color: var(--rose);
+}
+
+/* ABOUT */
+
+.about {
+  background: #EEE7DF;
+}
+
+.about-grid {
+  display: block;
+  max-width: 850px;
+}
+
+.about-text {
+  max-width: 760px;
+  margin: auto;
+}
+
+.about-text .section-title {
+  font-size: clamp(48px, 7vw, 76px);
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 2;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.about-details {
+  border-color: var(--line);
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.detail-label {
+  color: var(--rose);
+  letter-spacing: 3px;
+}
+
+.detail-value {
+  color: var(--dark);
+  font-size: 13px;
+}
+
+/* PROJECTS: EDITORIAL MAGAZINE STYLE */
+
+#projects {
+  background: var(--cream);
+}
+
+.projects-grid {
+  display: block;
+  margin-top: 65px;
+  border-top: 1px solid var(--line);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 100px 1fr 1.2fr;
+  align-items: center;
+  gap: 35px;
+  padding: 40px 15px;
+  background: transparent;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  transition: background .3s, padding .3s;
+}
+
+.project-card:hover {
+  transform: none;
+  padding-left: 25px;
+  background: rgba(231,214,212,.20);
+  box-shadow: none;
+}
+
+.project-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: var(--rose);
+  font-style: italic;
+}
+
+.project-info {
+  padding: 0;
+}
+
+.project-category {
+  color: var(--rose);
+  letter-spacing: 2px;
+  font-size: 9px;
+}
+
+.project-info h3 {
+  font-size: 29px;
+  color: var(--dark);
+  margin: 8px 0;
+}
+
+.project-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--brown);
+  border-color: var(--rose);
+}
+
+.project-card:hover .project-link {
+  color: var(--rose);
+}
+
+/* EXPERIENCE */
+
+.experience {
+  background: #EEE7DF;
+}
+
+.timeline-track {
+  background: #E3D6D0;
+}
+
+.timeline-progress {
+  background: var(--rose);
+}
+
+.timeline-dot {
+  background: var(--cream);
+  border-color: var(--rose);
+  color: var(--dark);
+}
+
+.timeline-item.visible .timeline-dot {
+  background: var(--rose);
+  color: white;
+}
+
+.timeline-date {
+  color: var(--rose);
+}
+
+.timeline-card h3 {
+  color: var(--dark);
+}
+
+.timeline-company {
+  color: var(--rose);
+}
+
+.timeline-card p {
+  color: var(--muted);
+}
+
+/* AWARDS */
+
+.award-card {
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.award-icon {
+  background: var(--rose-light);
+  color: var(--rose);
+}
+
+.award-card h3 {
+  color: var(--dark);
+}
+
+.award-card p {
+  color: var(--muted);
+}
+
+.award-year {
+  color: var(--rose);
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--dark);
+}
+
+.contact .eyebrow {
+  color: #D1AEB0;
+}
+
+.contact-button {
+  background: var(--rose-light);
+  color: var(--dark);
+  border-radius: 3px;
+  padding: 16px 32px;
+}
+
+.contact-button:hover {
+  background: var(--rose);
+  color: white;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+footer {
+  background: var(--dark);
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width:750px) {
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 75px 0;
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 15vw, 85px);
+  }
+
+  .hero-image-wrap {
+    justify-self: center;
+    max-width: 340px;
+  }
+
+  .hero-image {
+    height: 430px;
+  }
+
+  .about-grid {
+    width: 88%;
+  }
+
+  .project-card {
+    grid-template-columns: 55px 1fr;
+    gap: 18px;
+    padding: 30px 5px;
+  }
+
+  .project-number {
+    font-size: 35px;
+  }
+
+  .project-info {
+    grid-column: 2;
+  }
+
+  .project-info h3 {
+    font-size: 25px;
+  }
+
+  .section {
+    padding: 85px 0;
+  }
+}
+
+  
+/* HOMEPAGE EDITORIAL LAYOUT */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 65px;
+  min-height: 720px;
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(75px, 8vw, 112px);
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: -4px;
+  color: #463D37;
+  margin: 35px 0;
+}
+
+.hero-name span {
+  color: #B88F91;
+  font-style: italic;
+}
+
+.hero-description {
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #79695D;
+  max-width: 490px;
+  margin-bottom: 15px;
+}
+
+.graduation-date {
+  color: #B88F91;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+
+.hero-image-wrap {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+}
+
+.hero-image {
+  width: 100%;
+  height: 550px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 220px 220px 8px 8px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE */
+
+@media(max-width:750px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+
+  .hero-name {
+    font-size: clamp(65px, 14vw, 85px);
+  }
+
+  .hero-image-wrap {
+    justify-self: center;
+    max-width: 340px;
+  }
+
+  .hero-image {
+    height: 440px;
+  }
+}
+  
+/* CENTRE EXPERIENCE INTRODUCTION */
+
+#experience .section-intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  display: block;
+}
+
+#experience .eyebrow {
+  text-align: center;
+}
+
+#experience .section-title {
+  text-align: center;
+}
+
 </style>
 </head>
 <body>
@@ -746,104 +1307,264 @@ footer {
 
 <main>
 
+
+
 <!-- HOME -->
 <section class="container hero" id="home">
-<div class="hero-content reveal">
-<div class="eyebrow">A little introduction</div>
-<div class="hero-tag">WELCOME TO MY PERSONAL PORTFOLIO</div>
-<h1>Hello, I'm<br><span>RL.</span></h1>
-<p class="hero-description">
-Welcome to my corner of the internet.
-I'm passionate about learning, creating,
-and exploring new opportunities.
-Here you'll find a little about who I am
-and what I've been working on.
-</p>
-<div class="hero-buttons">
-<a href="#about" class="button">Discover More</a>
-<a href="#contact" class="text-link">Get in touch ↗</a>
-</div>
-</div>
-<div class="hero-image-wrap reveal">
-<img src="images/profile.jpg" alt="Portrait of RL" class="hero-image">
-<div class="image-caption">A little bit about me ✿</div>
-</div>
-</section>
 
+  <div class="hero-content reveal">
+
+    <div class="eyebrow">
+      A LITTLE INTRODUCTION
+    </div>
+
+    <h1 class="hero-name">
+      Aaliyah<br>
+      <span>Pirani</span>
+    </h1>
+
+    <p class="hero-description">
+      Third year HBSc student in Computer Science
+      and Quantitative Biology at the University
+      of Toronto.
+    </p>
+
+    <p class="graduation-date">
+      Graduating in April 2028
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="button">
+        Discover More
+      </a>
+
+      <a href="#contact" class="text-link">
+        Get in touch ↗
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-image-wrap reveal">
+
+    <img
+      src="images/profile.jpg"
+      alt="Portrait of Aaliyah Pirani"
+      class="hero-image"
+    >
+
+  </div>
+
+</section>
+  
 <!-- ABOUT -->
 <section class="section about" id="about">
-<div class="container about-grid">
-<div class="reveal">
-<img src="images/about.jpg" alt="Personal photograph" class="about-photo">
-</div>
-<div class="about-text reveal">
-<div class="eyebrow">Get to know me</div>
-<h2 class="section-title">A little about<br>my story.</h2>
-<p>Hi! I'm RL, and I'm currently [your degree] at [your university].</p>
-<p>I'm someone who enjoys exploring new ideas, taking on meaningful challenges, and finding opportunities to grow personally and professionally.</p>
-<p>My interests include [your interests], and I'm especially passionate about [your passions].</p>
-<p>I created this space to share my journey, experiences, projects, and achievements. Thank you for stopping by!</p>
-<div class="about-details">
-<div><div class="detail-label">Education</div><div class="detail-value">Your University</div></div>
-<div><div class="detail-label">Field of Study</div><div class="detail-value">Your Degree</div></div>
-<div><div class="detail-label">Interests</div><div class="detail-value">Your Interests</div></div>
-<div><div class="detail-label">Currently</div><div class="detail-value">Your Current Focus</div></div>
-</div>
-</div>
-</div>
+
+  <div class="container about-grid">
+
+    <div class="about-text reveal">
+
+      <div class="eyebrow">Get to know me</div>
+
+      <h2 class="section-title">
+        A little about<br>
+        my story.
+      </h2>
+
+      <p>
+        Hi! I'm RL, currently studying [your degree]
+        at [your university].
+      </p>
+
+      <p>
+        I'm someone who enjoys exploring new ideas,
+        taking on meaningful challenges, and finding
+        opportunities to grow both personally and
+        professionally.
+      </p>
+
+      <p>
+        I'm particularly interested in [your interests]
+        and passionate about [your passions]. I enjoy
+        combining creativity, curiosity, and dedication
+        in everything I do.
+      </p>
+
+      <p>
+        This website is a little collection of my journey:
+        the experiences I've gained, projects I've worked
+        on, and achievements I'm proud of.
+      </p>
+
+      <div class="about-details">
+
+        <div>
+          <div class="detail-label">Education</div>
+          <div class="detail-value">Your University</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Field of Study</div>
+          <div class="detail-value">Your Degree</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Interests</div>
+          <div class="detail-value">Your Interests</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Currently</div>
+          <div class="detail-value">Your Current Focus</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
 
 <!-- PROJECTS -->
 <section class="section container" id="projects">
-<div class="reveal">
-<div class="eyebrow">A collection of my work</div>
-<h2 class="section-title">Selected Projects.</h2>
-<p class="section-intro">A few projects, ideas, and experiences that reflect my interests and creativity.</p>
-</div>
 
-<div class="projects-grid">
+  <div class="reveal">
 
-<article class="project-card reveal">
-<img src="images/project1.jpg" alt="Project one" class="project-image">
-<div class="project-info">
-<div class="project-category">Research / Academic</div>
-<h3>Project One</h3>
-<p>Describe your project, the problem you explored, and what you learned.</p>
-<a href="https://github.com/" class="project-link">Explore Project ↗</a>
-</div>
-</article>
+    <div class="eyebrow">A collection of my work</div>
 
-<article class="project-card reveal">
-<img src="images/project2.jpg" alt="Project two" class="project-image">
-<div class="project-info">
-<div class="project-category">Creative / Professional</div>
-<h3>Project Two</h3>
-<p>Describe another project, including your role and its outcome.</p>
-<a href="https://github.com/" class="project-link">Explore Project ↗</a>
-</div>
-</article>
+    <h2 class="section-title">
+      Selected Projects.
+    </h2>
 
-<article class="project-card reveal">
-<img src="images/project3.jpg" alt="Project three" class="project-image">
-<div class="project-info">
-<div class="project-category">Personal Project</div>
-<h3>Project Three</h3>
-<p>Showcase something you created, developed, or contributed to.</p>
-<a href="https://github.com/" class="project-link">Explore Project ↗</a>
-</div>
-</article>
+    <p class="section-intro">
+      A collection of ideas, experiences, and projects
+      that reflect my curiosity, interests, and growth.
+    </p>
 
-<article class="project-card reveal">
-<img src="images/project4.jpg" alt="Project four" class="project-image">
-<div class="project-info">
-<div class="project-category">Leadership / Community</div>
-<h3>Project Four</h3>
-<p>Highlight an initiative, volunteer experience, or accomplishment.</p>
-<a href="https://github.com/" class="project-link">Explore Project ↗</a>
-</div>
-</article>
+  </div>
 
-</div>
+  <div class="projects-grid">
+
+    <!-- PROJECT 01 -->
+    <article class="project-card reveal">
+
+      <div class="project-number">01</div>
+
+      <div class="project-info">
+
+        <div class="project-category">
+          RESEARCH / ACADEMIC
+        </div>
+
+        <h3>Project One</h3>
+
+        <a href="https://github.com/"
+           class="project-link"
+           target="_blank">
+          Explore project ↗
+        </a>
+
+      </div>
+
+      <p class="project-description">
+        Describe your research or academic project.
+        Explain the objective, your contribution,
+        the tools you used, and what you learned.
+      </p>
+
+    </article>
+
+    <!-- PROJECT 02 -->
+    <article class="project-card reveal">
+
+      <div class="project-number">02</div>
+
+      <div class="project-info">
+
+        <div class="project-category">
+          CREATIVE / PROFESSIONAL
+        </div>
+
+        <h3>Project Two</h3>
+
+        <a href="https://github.com/"
+           class="project-link"
+           target="_blank">
+          Explore project ↗
+        </a>
+
+      </div>
+
+      <p class="project-description">
+        Highlight a professional or creative project.
+        Describe your role, the process, and the
+        outcome you achieved.
+      </p>
+
+    </article>
+
+    <!-- PROJECT 03 -->
+    <article class="project-card reveal">
+
+      <div class="project-number">03</div>
+
+      <div class="project-info">
+
+        <div class="project-category">
+          PERSONAL PROJECT
+        </div>
+
+        <h3>Project Three</h3>
+
+        <a href="https://github.com/"
+           class="project-link"
+           target="_blank">
+          Explore project ↗
+        </a>
+
+      </div>
+
+      <p class="project-description">
+        Showcase something you developed independently.
+        Share the inspiration behind it and the skills
+        you gained along the way.
+      </p>
+
+    </article>
+
+    <!-- PROJECT 04 -->
+    <article class="project-card reveal">
+
+      <div class="project-number">04</div>
+
+      <div class="project-info">
+
+        <div class="project-category">
+          LEADERSHIP / COMMUNITY
+        </div>
+
+        <h3>Project Four</h3>
+
+        <a href="https://github.com/"
+           class="project-link"
+           target="_blank">
+          Explore project ↗
+        </a>
+
+      </div>
+
+      <p class="project-description">
+        Highlight an initiative, leadership experience,
+        extracurricular activity, or community
+        contribution that matters to you.
+      </p>
+
+    </article>
+
+  </div>
+
 </section>
 
 <!-- EXPERIENCE -->
