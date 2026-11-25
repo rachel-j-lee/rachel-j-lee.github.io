@@ -1,384 +1,983 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RL. | Personal Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+:root {
+  --cream: #F8F5EF;
+  --beige: #EDE5DA;
+  --light: #F2ECE3;
+  --taupe: #B69B83;
+  --brown: #796654;
+  --dark: #44382F;
+  --muted: #897D71;
+  --white: #FFFEFC;
+  --line: #DDD2C5;
+}
 
-    body {
-      background: #faf9f6;
-      color: #292929;
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.7;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 8%;
-      position: sticky;
-      top: 0;
-      background: #faf9f6;
-      z-index: 10;
-      border-bottom: 1px solid #eae7e1;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 25px;
-      text-decoration: none;
-      color: #292929;
-    }
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 24px;
-    }
+a { color: inherit; }
 
-    nav a {
-      text-decoration: none;
-      color: #555;
-      font-size: 13px;
-    }
+.container {
+  width: min(1100px, 86%);
+  margin: auto;
+}
 
-    nav a:hover {
-      color: #b28c76;
-    }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  color: var(--taupe);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
 
-    section {
-      padding: 90px 10%;
-      scroll-margin-top: 75px;
-    }
+.section {
+  padding: 110px 0;
+  scroll-margin-top: 75px;
+}
 
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-    }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 55px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(45px, 7vw, 76px);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
+.section-intro {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    .hero p {
-      color: #777;
-      max-width: 500px;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248,245,239,.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(182,155,131,.2);
+}
 
-    .hero img {
-      width: 290px;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 150px 150px 10px 10px;
-    }
+.navbar {
+  width: 86%;
+  max-width: 1200px;
+  min-height: 76px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    .eyebrow {
-      color: #a88772;
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  text-decoration: none;
+}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
 
-    .about {
-      background: #f0ede7;
-    }
+.nav-links a {
+  text-decoration: none;
+  font-size: 11px;
+  color: var(--brown);
+}
 
-    .about-content {
-      max-width: 750px;
-    }
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--dark);
+}
 
-    .about p {
-      color: #686868;
-      margin-bottom: 16px;
-    }
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 65px;
+  padding: 85px 0 100px;
+}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 35px;
-      margin-top: 35px;
-    }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(55px, 7.5vw, 90px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
 
-    .project {
-      background: white;
-      padding-bottom: 25px;
-    }
+.hero h1 span {
+  color: var(--taupe);
+  font-style: italic;
+}
 
-    .project img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-    }
+.hero-tag {
+  color: var(--brown);
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 17px;
+}
 
-    .project h3,
-    .project p,
-    .project a {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
+.hero-description {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 440px;
+  margin: 25px 0;
+}
 
-    .project h3 {
-      margin-top: 18px;
-      font-size: 20px;
-    }
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 
-    .project p {
-      color: #777;
-      font-size: 14px;
-      margin-top: 8px;
-    }
+.button {
+  display: inline-block;
+  background: var(--dark);
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 40px;
+  font-size: 11px;
+  transition: .3s;
+}
 
-    .project a {
-      display: inline-block;
-      margin-top: 15px;
-      color: #a07860;
-      text-decoration: none;
-      font-size: 13px;
-    }
+.button:hover {
+  background: var(--taupe);
+  transform: translateY(-3px);
+}
 
-    .experience-item {
-      border-left: 2px solid #c6a68f;
-      padding: 5px 0 30px 25px;
-      margin-top: 25px;
-    }
+.text-link {
+  font-size: 11px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--taupe);
+  padding-bottom: 4px;
+}
 
-    .experience-item span {
-      color: #a88772;
-      font-size: 13px;
-    }
+.hero-image-wrap {
+  position: relative;
+  max-width: 370px;
+  justify-self: end;
+}
 
-    .experience-item p {
-      color: #777;
-      margin-top: 8px;
-    }
+.hero-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 190px 190px 12px 12px;
+  background: var(--beige);
+}
 
-    .contact {
-      background: #f0ede7;
-      text-align: center;
-    }
+.image-caption {
+  position: absolute;
+  bottom: -20px;
+  left: -35px;
+  background: var(--white);
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-size: 10px;
+  color: var(--brown);
+  box-shadow: 0 8px 25px rgba(68,56,47,.07);
+}
 
-    .contact p {
-      color: #777;
-      margin-bottom: 20px;
-    }
+.about {
+  background: var(--light);
+}
 
-    .contact a {
-      color: #a07860;
-      text-decoration: none;
-    }
+.about-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 85px;
+  align-items: center;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #888;
-      font-size: 12px;
-    }
+.about-photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--beige);
+}
 
-    @media(max-width: 700px) {
-      nav {
-        padding: 18px 5%;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
+.about-text p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
 
-      nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-      }
+.about-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
 
-      nav a {
-        font-size: 11px;
-      }
+.detail-label {
+  font-size: 9px;
+  color: var(--taupe);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-      section {
-        padding: 65px 7%;
-      }
+.detail-value {
+  font-size: 12px;
+  margin-top: 5px;
+}
 
-      .hero {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-      }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 35px;
+  margin-top: 50px;
+}
 
-      .hero img {
-        width: 220px;
-        height: 260px;
-      }
+.project-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: .3s;
+}
 
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(68,56,47,.08);
+}
+
+.project-image {
+  width: 100%;
+  height: 265px;
+  object-fit: cover;
+  display: block;
+  background: var(--beige);
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-category {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.project-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 9px 0;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.project-link {
+  text-decoration: none;
+  font-size: 11px;
+  border-bottom: 1px solid var(--taupe);
+  padding-bottom: 4px;
+}
+
+.experience {
+  background: var(--light);
+}
+
+.timeline-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 850px;
+  margin: auto;
+  padding: 5px 0;
+}
+
+.timeline-track {
+  position: absolute;
+  width: 7px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: #E0D6CA;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.timeline-progress {
+  width: 100%;
+  height: 0%;
+  background: var(--taupe);
+  border-radius: 20px;
+  transition: height .08s linear;
+}
+
+.timeline-item {
+  width: 50%;
+  position: relative;
+  padding: 0 45px 65px;
+  opacity: .45;
+  transform: translateY(18px);
+  transition: opacity .6s, transform .6s;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+  margin-left: 50%;
+}
+
+.timeline-item:nth-child(even) {
+  text-align: right;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 8px;
+  width: 17px;
+  height: 17px;
+  background: var(--cream);
+  border: 3px solid var(--taupe);
+  border-radius: 50%;
+  z-index: 2;
+  transition: background .3s;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  left: -8px;
+  transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  right: -9px;
+  transform: translateX(50%);
+}
+
+.timeline-item.visible .timeline-dot {
+  background: var(--taupe);
+}
+
+.timeline-date {
+  color: var(--taupe);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 9px;
+}
+
+.timeline-card {
+  background: var(--white);
+  border: 1px solid rgba(182,155,131,.2);
+  padding: 23px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(68,56,47,.035);
+}
+
+.timeline-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.timeline-company {
+  color: var(--brown);
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.timeline-card p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+  margin-top: 45px;
+}
+
+.award-card {
+  background: var(--white);
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: .3s;
+}
+
+.award-card:hover {
+  transform: translateY(-4px);
+}
+
+.award-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--light);
+  display: grid;
+  place-items: center;
+  color: var(--brown);
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.award-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.award-card p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.award-year {
+  color: var(--taupe);
+  font-size: 10px;
+  margin-top: 9px;
+}
+
+.contact {
+  background: var(--dark);
+  color: var(--cream);
+  text-align: center;
+  padding: 100px 0;
+}
+
+.contact .eyebrow {
+  color: #C6AC94;
+}
+
+.contact .section-title {
+  color: var(--cream);
+}
+
+.contact-description {
+  color: #D0C4B8;
+  max-width: 480px;
+  margin: 15px auto 30px;
+  font-size: 13px;
+}
+
+.contact-button {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--dark);
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.contact-button:hover {
+  background: var(--taupe);
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.social-links a {
+  font-size: 11px;
+  color: #D0C4B8;
+  text-decoration: none;
+}
+
+footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,.13);
+  color: #C0B2A5;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s, transform .8s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:750px) {
+  .navbar {
+    width: 92%;
+    min-height: 68px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+
+  .nav-links {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a { font-size: 9px; }
+  .brand { font-size: 25px; }
+  .container { width: 88%; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 65px 0 90px;
+  }
+
+  .hero-image-wrap {
+    justify-self: center;
+    width: 75%;
+  }
+
+  .hero-image { height: 370px; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-photo { height: 350px; }
+
+  .projects-grid,
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section { padding: 80px 0; }
+
+  .timeline-track { left: 12px; }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 45px 42px;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 12px;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  *,*::before,*::after {
+    transition-duration: .01ms !important;
+  }
+}
+  
+</style>
 </head>
-
 <body>
 
-  <nav>
-    <a href="#home" class="logo">YN.</a>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header>
+<nav class="navbar">
+<a href="#home" class="brand">RL.</a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#awards">Awards</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-  <section class="hero" id="home">
-    <div>
-      <div class="eyebrow">Welcome to my portfolio</div>
-      <h1>Your Name<br>Here.</h1>
-      <p>
-        Your degree, university, and a short description
-        of who you are and what you are passionate about.
-      </p>
-      <p style="margin-top:15px;">
-        Graduating in 20XX
-      </p>
-    </div>
+<main>
 
-    <img src="images/profile.jpg" alt="A photo of me">
-  </section>
+<!-- HOME -->
+<section class="container hero" id="home">
+<div class="hero-content reveal">
+<div class="eyebrow">A little introduction</div>
+<div class="hero-tag">WELCOME TO MY PERSONAL PORTFOLIO</div>
+<h1>Hello, I'm<br><span>RL.</span></h1>
+<p class="hero-description">
+Welcome to my corner of the internet.
+I'm passionate about learning, creating,
+and exploring new opportunities.
+Here you'll find a little about who I am
+and what I've been working on.
+</p>
+<div class="hero-buttons">
+<a href="#about" class="button">Discover More</a>
+<a href="#contact" class="text-link">Get in touch ↗</a>
+</div>
+</div>
+<div class="hero-image-wrap reveal">
+<img src="images/profile.jpg" alt="Portrait of RL" class="hero-image">
+<div class="image-caption">A little bit about me ✿</div>
+</div>
+</section>
 
-  <section class="about" id="about">
-    <div class="about-content">
-      <div class="eyebrow">A little introduction</div>
-      <h2>About Me</h2>
+<!-- ABOUT -->
+<section class="section about" id="about">
+<div class="container about-grid">
+<div class="reveal">
+<img src="images/about.jpg" alt="Personal photograph" class="about-photo">
+</div>
+<div class="about-text reveal">
+<div class="eyebrow">Get to know me</div>
+<h2 class="section-title">A little about<br>my story.</h2>
+<p>Hi! I'm RL, and I'm currently [your degree] at [your university].</p>
+<p>I'm someone who enjoys exploring new ideas, taking on meaningful challenges, and finding opportunities to grow personally and professionally.</p>
+<p>My interests include [your interests], and I'm especially passionate about [your passions].</p>
+<p>I created this space to share my journey, experiences, projects, and achievements. Thank you for stopping by!</p>
+<div class="about-details">
+<div><div class="detail-label">Education</div><div class="detail-value">Your University</div></div>
+<div><div class="detail-label">Field of Study</div><div class="detail-value">Your Degree</div></div>
+<div><div class="detail-label">Interests</div><div class="detail-value">Your Interests</div></div>
+<div><div class="detail-label">Currently</div><div class="detail-value">Your Current Focus</div></div>
+</div>
+</div>
+</div>
+</section>
 
-      <p>
-        Hi! I'm Your Name. I'm currently studying
-        YOUR DEGREE at YOUR UNIVERSITY.
-      </p>
+<!-- PROJECTS -->
+<section class="section container" id="projects">
+<div class="reveal">
+<div class="eyebrow">A collection of my work</div>
+<h2 class="section-title">Selected Projects.</h2>
+<p class="section-intro">A few projects, ideas, and experiences that reflect my interests and creativity.</p>
+</div>
 
-      <p>
-        I'm passionate about technology, creativity,
-        problem solving, and exploring new opportunities.
-        Outside of school, I enjoy [your hobbies and interests].
-      </p>
+<div class="projects-grid">
 
-      <p>
-        I'm always looking to learn, grow, and connect
-        with people who share similar interests.
-      </p>
-    </div>
-  </section>
+<article class="project-card reveal">
+<img src="images/project1.jpg" alt="Project one" class="project-image">
+<div class="project-info">
+<div class="project-category">Research / Academic</div>
+<h3>Project One</h3>
+<p>Describe your project, the problem you explored, and what you learned.</p>
+<a href="https://github.com/" class="project-link">Explore Project ↗</a>
+</div>
+</article>
 
-  <section id="projects">
-    <div class="eyebrow">Things I've created</div>
-    <h2>My Projects</h2>
-    <p>Some of my favourite projects and work.</p>
+<article class="project-card reveal">
+<img src="images/project2.jpg" alt="Project two" class="project-image">
+<div class="project-info">
+<div class="project-category">Creative / Professional</div>
+<h3>Project Two</h3>
+<p>Describe another project, including your role and its outcome.</p>
+<a href="https://github.com/" class="project-link">Explore Project ↗</a>
+</div>
+</article>
 
-    <div class="projects-grid">
+<article class="project-card reveal">
+<img src="images/project3.jpg" alt="Project three" class="project-image">
+<div class="project-info">
+<div class="project-category">Personal Project</div>
+<h3>Project Three</h3>
+<p>Showcase something you created, developed, or contributed to.</p>
+<a href="https://github.com/" class="project-link">Explore Project ↗</a>
+</div>
+</article>
 
-      <div class="project">
-        <img src="images/project1.jpg" alt="Project one">
-        <h3>Project One</h3>
-        <p>A short description of what you created
-        and the technologies you used.</p>
-        <a href="https://github.com/">View Project →</a>
-      </div>
+<article class="project-card reveal">
+<img src="images/project4.jpg" alt="Project four" class="project-image">
+<div class="project-info">
+<div class="project-category">Leadership / Community</div>
+<h3>Project Four</h3>
+<p>Highlight an initiative, volunteer experience, or accomplishment.</p>
+<a href="https://github.com/" class="project-link">Explore Project ↗</a>
+</div>
+</article>
 
-      <div class="project">
-        <img src="images/project2.jpg" alt="Project two">
-        <h3>Project Two</h3>
-        <p>Describe another project, research experience,
-        or creative accomplishment.</p>
-        <a href="https://github.com/">View Project →</a>
-      </div>
+</div>
+</section>
 
-      <div class="project">
-        <img src="images/project3.jpg" alt="Project three">
-        <h3>Project Three</h3>
-        <p>Explain what problem you solved and
-        what you learned.</p>
-        <a href="https://github.com/">View Project →</a>
-      </div>
+<!-- EXPERIENCE -->
+<section class="section experience" id="experience">
+<div class="container">
+<div class="timeline-heading reveal">
+<div class="eyebrow">Where I've been</div>
+<h2 class="section-title">My Experience.</h2>
+<p class="section-intro">Every experience has been a part of my journey. Here's a look at the opportunities and milestones that have shaped me.</p>
+</div>
 
-      <div class="project">
-        <img src="images/project4.jpg" alt="Project four">
-        <h3>Project Four</h3>
-        <p>Add another interesting project here.</p>
-        <a href="https://github.com/">View Project →</a>
-      </div>
+<div class="timeline">
+<div class="timeline-track">
+<div class="timeline-progress" id="timelineProgress"></div>
+</div>
 
-    </div>
-  </section>
+<article class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2026 – Present</div>
+<div class="timeline-card">
+<h3>Position / Internship One</h3>
+<div class="timeline-company">Company or Organization</div>
+<p>Describe your responsibilities, contributions, and accomplishments in this role.</p>
+</div>
+</article>
 
-  <section id="experience">
-    <div class="eyebrow">My background</div>
-    <h2>Experience & Achievements</h2>
+<article class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2025 – 2026</div>
+<div class="timeline-card">
+<h3>Position / Internship Two</h3>
+<div class="timeline-company">Company or Organization</div>
+<p>Describe your work, projects, responsibilities, and the skills you developed.</p>
+</div>
+</article>
 
-    <div class="experience-item">
-      <span>2025 – Present</span>
-      <h3>Your Position / Internship</h3>
-      <p>Company or organization name. Describe your
-      responsibilities and accomplishments.</p>
-    </div>
+<article class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2024 – 2025</div>
+<div class="timeline-card">
+<h3>Leadership Experience</h3>
+<div class="timeline-company">Club / Organization / University</div>
+<p>Describe your involvement, leadership responsibilities, and contributions.</p>
+</div>
+</article>
 
-    <div class="experience-item">
-      <span>2024 – 2025</span>
-      <h3>Extracurricular Activity</h3>
-      <p>Describe your leadership, volunteering,
-      or extracurricular experience.</p>
-    </div>
+<article class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2023 – 2024</div>
+<div class="timeline-card">
+<h3>Volunteer Experience</h3>
+<div class="timeline-company">Organization Name</div>
+<p>Explain how you contributed and what the experience taught you.</p>
+</div>
+</article>
 
-    <div class="experience-item">
-      <span>2024</span>
-      <h3>Award or Scholarship</h3>
-      <p>Describe an award, scholarship, or recognition.</p>
-    </div>
-  </section>
+<article class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2022 – 2023</div>
+<div class="timeline-card">
+<h3>Earlier Experience</h3>
+<div class="timeline-company">Company / School / Organization</div>
+<p>Add an earlier role, extracurricular experience, or important milestone.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="eyebrow">Let's connect</div>
-    <h2>Get In Touch</h2>
-    <p>I'd love to hear from you!</p>
+<!-- AWARDS -->
+<section class="section container" id="awards">
+<div class="reveal">
+<div class="eyebrow">A few proud moments</div>
+<h2 class="section-title">Awards & Recognition.</h2>
+<p class="section-intro">Achievements, recognitions, and milestones I'm grateful to have received along the way.</p>
+</div>
 
-    <p>
-      Email:
-      <a href="mailto:youremail@example.com">
-        youremail@example.com
-      </a>
-    </p>
+<div class="awards-grid">
+<article class="award-card reveal">
+<div class="award-icon">✧</div>
+<div><h3>Award or Scholarship One</h3><p>Organization or Institution</p><div class="award-year">2026</div></div>
+</article>
+<article class="award-card reveal">
+<div class="award-icon">✧</div>
+<div><h3>Award or Recognition Two</h3><p>Organization or Institution</p><div class="award-year">2025</div></div>
+</article>
+<article class="award-card reveal">
+<div class="award-icon">✧</div>
+<div><h3>Certification</h3><p>Issuing Institution</p><div class="award-year">2025</div></div>
+</article>
+<article class="award-card reveal">
+<div class="award-icon">✧</div>
+<div><h3>Academic Achievement</h3><p>University or Institution</p><div class="award-year">2024</div></div>
+</article>
+</div>
+</section>
 
-    <p>
-      <a href="https://www.linkedin.com/">LinkedIn</a>
-      &nbsp; | &nbsp;
-      <a href="https://github.com/">GitHub</a>
-      &nbsp; | &nbsp;
-      <a href="https://www.instagram.com/">Instagram</a>
-    </p>
-  </section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container reveal">
+<div class="eyebrow">Let's connect</div>
+<h2 class="section-title">I'd love to hear from you.</h2>
+<p class="contact-description">Whether it's a professional opportunity, a collaboration, or simply a conversation, feel free to reach out!</p>
+<a href="mailto:your.email@example.com" class="contact-button">Say Hello ↗</a>
+<div class="social-links">
+<a href="https://www.linkedin.com/" target="_blank">LinkedIn ↗</a>
+<a href="https://github.com/" target="_blank">GitHub ↗</a>
+<a href="https://www.instagram.com/" target="_blank">Instagram ↗</a>
+</div>
+</div>
+</section>
 
-  <footer>
-    © 2026 Your Name. All rights reserved.
-  </footer>
+</main>
+
+<footer>
+<span>© 2026 RL. All rights reserved.</span>
+<span>Made with care ♡</span>
+</footer>
+
+
+// SCROLL REVEAL ANIMATIONS
+
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(element => {
+  revealObserver.observe(element);
+});
+
+
+// TIMELINE SCROLL PROGRESS
+
+const timeline = document.querySelector('.timeline');
+const progress = document.getElementById('timelineProgress');
+
+function updateTimeline() {
+  if (!timeline || !progress) return;
+
+  const rect = timeline.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  const start = viewportHeight * 0.75;
+  const end = viewportHeight * 0.30;
+
+  const totalDistance = rect.height + start - end;
+  const travelled = start - rect.top;
+
+  const percentage = Math.max(
+    0,
+    Math.min(100, (travelled / totalDistance) * 100)
+  );
+
+  progress.style.height = percentage + '%';
+}
+
+
+// TIMELINE MILESTONE ANIMATIONS
+
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const timelineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+timelineItems.forEach(item => {
+  timelineObserver.observe(item);
+});
+
+
+// SCROLL AND RESIZE EVENTS
+
+let ticking = false;
+
+function requestTimelineUpdate() {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateTimeline();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+window.addEventListener('scroll', requestTimelineUpdate, {
+  passive: true
+});
+
+window.addEventListener('resize', requestTimelineUpdate);
+
+updateTimeline();
+
+
+// ACTIVE NAVIGATION LINK
+
+const sections = document.querySelectorAll('main section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === '#' + entry.target.id
+        );
+      });
+    }
+  });
+}, { rootMargin: '-25% 0px -65% 0px' });
+
+sections.forEach(section => {
+  sectionObserver.observe(section);
+});
 
 </body>
 </html>
